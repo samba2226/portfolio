@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- Header Section -->
     <header>
-        <h1>SAIKAM VENKATA SAMBA SIVA RAO</h1>
-        <p>Web Development Beginner</p>
+        <div>
+            <h1>SAIKAM VENKATA SAMBA SIVA RAO</h1>
+            <p>Web Development Beginner</p>
+        </div>
 
         <nav>
-            <a href="#about">About</a> |
-            <a href="#skills">Skills</a> |
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
-    <hr>
 
     <!-- Main Content -->
     <main>
@@ -27,62 +34,45 @@
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
-            <img src="images/resume_photo.png" height="100px" width="100px" alt="Profile picture">
+            <img src="images/resume_photo.png" alt="Profile Picture" width="120" height="120">
             <p>
-                I am a beginner in web development learning HTML to build clean and structured websites.I have a passion
-                for coding and building web applications.
+                I am a beginner in web development learning HTML, CSS, and JavaScript to build clean and structured websites.
+                I enjoy problem-solving and creating simple web applications.
             </p>
         </section>
-
-
-        <hr>
-
 
         <!-- Skills Section -->
         <section id="skills">
             <h2>My Skills</h2>
             <ul>
                 <li>HTML5</li>
-                <li>CSS </li>
+                <li>CSS3</li>
                 <li>JavaScript</li>
                 <li>Web Development</li>
-                <li>Java </li>
+                <li>Java</li>
                 <li>Problem Solving</li>
             </ul>
         </section>
-
-
-        <hr>
-
 
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Me</h2>
 
-
             <form>
-                <label>Name:</label><br>
-                <input type="text" required placeholder="Enter your name"><br><br>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" placeholder="Enter your name" required><br><br>
 
+                <label for="email">Email</label><br>
+                <input type="email" id="email" placeholder="Enter your email" required><br><br>
 
-                <label>Email:</label><br>
-                <input type="email" required placeholder="Enter your email"><br><br>
-
-
-                <label>Message:</label><br>
-                <textarea rows="4" required placeholder="Your message"></textarea><br><br>
-
+                <label for="message">Message</label><br>
+                <textarea id="message" rows="4" placeholder="Your message" required></textarea><br><br>
 
                 <button type="submit">Send Message</button>
             </form>
         </section>
 
-
     </main>
-
-
-    <hr>
-
 
     <!-- Footer -->
     <footer>
@@ -91,7 +81,5 @@
         <a href="https://www.linkedin.com/in/venkata-samba-siva-rao-saikam-595295251" target="_blank">LinkedIn</a>
     </footer>
 
-
 </body>
-
 </html>
