@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <div>
-            <h1>SAIKAM VENKATA SAMBA SIVA RAO</h1>
-            <p>Web Development Beginner</p>
-        </div>
+        <h1>SAIKAM VENKATA SAMBA SIVA RAO</h1>
+        <p>Web Development Beginner</p>
 
         <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
-        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
+        <button id="darkModeBtn">Toggle Dark Mode</button>
     </header>
 
     <!-- Main Content -->
@@ -37,14 +34,14 @@
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
-            <img src="images/resume_photo.png" alt="Profile Picture" width="120" height="120">
+            <img src="images/resume_photo.png" alt="Profile Picture" width="120">
             <p>
-                I am a beginner in web development learning HTML, CSS, and JavaScript to build clean and structured
-                websites.
-                I enjoy problem-solving and creating simple web applications.
+                I am a beginner in web development learning HTML, CSS, and JavaScript.
+                I enjoy problem-solving and building simple web applications.
             </p>
         </section>
-        <button onclick="toggleSection('about')">Show / Hide About</button>
+
+        <button id="aboutToggleBtn">Show / Hide About</button>
 
         <!-- Skills Section -->
         <section id="skills">
@@ -53,7 +50,6 @@
                 <li>HTML5</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
-                <li>Web Development</li>
                 <li>Java</li>
                 <li>Problem Solving</li>
             </ul>
@@ -63,18 +59,18 @@
         <section id="contact">
             <h2>Contact Me</h2>
 
-            <form id="contactForm" class="contact-form">
+            <form id="contactForm">
                 <span id="formError"></span>
-                <span id="formSuccess"></span>
+                <span id="formSuccess"></span><br><br>
 
-                <label for="name">Name</label><br>
-                <input type="text" id="name" placeholder="Enter your name" required><br><br>
+                <label>Name</label>
+                <input type="text" id="name" required>
 
-                <label for="email">Email</label><br>
-                <input type="email" id="email" placeholder="Enter your email" required><br><br>
+                <label>Email</label>
+                <input type="email" id="email" required>
 
-                <label for="message">Message</label><br>
-                <textarea id="message" rows="4" placeholder="Your message" required></textarea><br><br>
+                <label>Message</label>
+                <textarea id="message" rows="4" required></textarea>
 
                 <button type="submit">Send Message</button>
             </form>
@@ -86,9 +82,10 @@
     <footer>
         <p>© 2025 sambasivarao</p>
         <a href="https://github.com/samba2226" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/venkata-samba-siva-rao-saikam-595295251" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
     </footer>
-<Script src="script.js"></Script>
-</body>
 
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
 </html>

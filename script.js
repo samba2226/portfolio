@@ -1,16 +1,20 @@
+
 // PAGE LOAD CHECK
+
 console.log("JavaScript Loaded Successfully");
 
-// FORM VALIDATION
-document.getElementById("contactForm").addEventListener("submit", validateForm);
 
-function validateForm(event) {
+// FORM VALIDATION
+
+const form = document.getElementById("contactForm");
+const error = document.getElementById("formError");
+const success = document.getElementById("formSuccess");
+
+form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
-    const error = document.getElementById("formError");
-    const success = document.getElementById("formSuccess");
 
     error.textContent = "";
     success.textContent = "";
@@ -29,19 +33,23 @@ function validateForm(event) {
 
     success.textContent = "Message sent successfully!";
     success.style.color = "green";
+    form.reset();
+});
 
-    document.getElementById("contactForm").reset();
-}
 
 // DARK MODE TOGGLE
-function toggleDarkMode() {
+
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+darkModeBtn.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
+    localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark-mode")
+    );
+});
 
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("darkMode", isDark);
-}
-
-// Load user preference
+// Load saved preference
 window.onload = function () {
     if (localStorage.getItem("darkMode") === "true") {
         document.body.classList.add("dark-mode");
@@ -49,10 +57,12 @@ window.onload = function () {
 };
 
 
-// SHOW / HIDE CONTENT
+// SHOW / HIDE ABOUT SECTION
 
-function toggleSection(id) {
-    const section = document.getElementById(id);
-    section.style.display =
-        section.style.display === "none" ? "block" : "none";
-}
+const aboutToggleBtn = document.getElementById("aboutToggleBtn");
+
+aboutToggleBtn.addEventListener("click", function () {
+    const aboutSection = document.getElementById("about");
+    aboutSection.style.display =
+        aboutSection.style.display === "none" ? "block" : "none";
+});
