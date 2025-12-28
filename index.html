@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +27,8 @@
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
     </header>
 
     <!-- Main Content -->
@@ -36,10 +39,12 @@
             <h2>About Me</h2>
             <img src="images/resume_photo.png" alt="Profile Picture" width="120" height="120">
             <p>
-                I am a beginner in web development learning HTML, CSS, and JavaScript to build clean and structured websites.
+                I am a beginner in web development learning HTML, CSS, and JavaScript to build clean and structured
+                websites.
                 I enjoy problem-solving and creating simple web applications.
             </p>
         </section>
+        <button onclick="toggleSection('about')">Show / Hide About</button>
 
         <!-- Skills Section -->
         <section id="skills">
@@ -58,7 +63,10 @@
         <section id="contact">
             <h2>Contact Me</h2>
 
-            <form>
+            <form id="contactForm" class="contact-form">
+                <span id="formError"></span>
+                <span id="formSuccess"></span>
+
                 <label for="name">Name</label><br>
                 <input type="text" id="name" placeholder="Enter your name" required><br><br>
 
@@ -80,6 +88,7 @@
         <a href="https://github.com/samba2226" target="_blank">GitHub</a> |
         <a href="https://www.linkedin.com/in/venkata-samba-siva-rao-saikam-595295251" target="_blank">LinkedIn</a>
     </footer>
-
+<Script src="script.js"></Script>
 </body>
+
 </html>

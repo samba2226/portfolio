@@ -1,4 +1,4 @@
-/* Reset Default Styles */
+    /* Reset Default Styles */
 
 * {
     margin: 0;
@@ -126,6 +126,20 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode section {
+    background-color: #2b2b2b;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: black;
+}
+
 
 /* Responsive Design */
 
