@@ -1,20 +1,25 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  /*  THEME TOGGLE */
+
+  /*   DARK MODE TOGGLE */
 
   const toggleBtn = document.getElementById("darkModeBtn");
+  const savedTheme = localStorage.getItem("theme");
 
-  if (toggleBtn) {
-    // Load saved theme on page load
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "true") {
-      document.body.classList.add("dark-mode");
+  // Apply saved theme on page load
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    if (toggleBtn) {
       toggleBtn.textContent = "☀️ Light Mode";
-    } else {
+    }
+  } else {
+    if (toggleBtn) {
       toggleBtn.textContent = "🌙 Dark Mode";
     }
+  }
 
-    // Toggle theme on button click
+  // Toggle theme on click
+  if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       const isDark = document.body.classList.toggle("dark-mode");
 
@@ -22,17 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
         ? "☀️ Light Mode"
         : "🌙 Dark Mode";
 
-      localStorage.setItem("theme", isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
     });
-  } else {
-    console.error("darkModeBtn not found in DOM");
   }
 
-  /* FORM VALIDATION */
+
+  /*CONTACT FORM VALIDATION */
 
   const form = document.getElementById("contactForm");
-  const error = document.getElementById("formError");
-  const success = document.getElementById("formSuccess");
+  const errorMsg = document.getElementById("formError");
+  const successMsg = document.getElementById("formSuccess");
 
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -42,28 +46,37 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
 
-      error.textContent = "";
-      success.textContent = "";
+      // Clear messages
+      errorMsg.textContent = "";
+      successMsg.textContent = "";
 
-      if (name === "" || email === "" || message === "") {
-        error.textContent = "All fields are required.";
+      // Validation
+      if (!name || !email || !message) {
+        errorMsg.textContent = "All fields are required.";
         return;
       }
 
-      if (!email.includes("@") || !email.includes(".")) {
-        error.textContent = "Please enter a valid email address.";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        errorMsg.textContent = "Please enter a valid email address.";
         return;
       }
 
       if (message.length < 10) {
-        error.textContent = "Message must be at least 10 characters.";
+        errorMsg.textContent = "Message must be at least 10 characters.";
         return;
       }
 
-      success.textContent = "Message sent successfully!";
+      // Success
+      successMsg.textContent = "Message sent successfully!";
       form.reset();
+
+      // Auto-hide success message
+      setTimeout(() => {
+        successMsg.textContent = "";
+      }, 3000);
     });
-  } else {
-    console.error("contactForm not found in DOM");
   }
+
 });
+
