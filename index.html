@@ -1,91 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
 
-    <!-- Google Font -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Modular Portfolio</title>
+
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/themes.css">
 </head>
 
-<body>
+<body class="page">
+    <header class="header">
+        <div class="header__profile">
 
-    <!-- Header -->
-    <header>
-        <h1>SAIKAM VENKATA SAMBA SIVA RAO</h1>
-        <p>Web Development Beginner</p>
+            <img src="images/resume_photo.png" alt="Profile photo of Samba Siva Rao" class="header__photo" />
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <div class="header__content">
+                <h1 class="header__name">Saikam Venkata Samba Siva Rao</h1>
+                <p class="header__role">Frontend Developer</p>
+                <p class="header__intro">
+                    Beginner web developer with strong understanding of CSS Grid,
+                    Flexbox, animations, and modular UI design.
+                </p>
+            </div>
+
+        </div>
+
+        <nav class="nav">
+            <a class="nav__link" href="#about">About</a>
+            <a class="nav__link" href="#skills">Skills</a>
+            <a class="nav__link" href="#projects">Projects</a>
+            <a class="nav__link" href="#contact">Contact</a>
         </nav>
 
-        <button id="darkModeBtn">Toggle Dark Mode</button>
+        <button type="button" id="darkModeBtn" class="btn btn--toggle">
+            🌙 Dark Mode
+        </button>
     </header>
 
-    <!-- Main Content -->
-    <main>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="images/resume_photo.png" alt="Profile Picture" width="120">
-            <p>
-                I am a beginner in web development learning HTML, CSS, and JavaScript.
-                I enjoy problem-solving and building simple web applications.
+    </header>
+
+    <main class="grid-layout">
+
+        <section id="about" class="card card--profile">
+            <h2 class="card__title">About Me</h2>
+            <p class="card__text">
+                Beginner web developer with strong understanding of CSS Grid,
+                Flexbox, animations, and modular design principles.
             </p>
         </section>
 
-        <button id="aboutToggleBtn">Show / Hide About</button>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>My Skills</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>Problem Solving</li>
+        <section id="skills" class="card">
+            <h2 class="card__title">Skills</h2>
+            <ul class="skills">
+                <li class="skills__item">HTML5</li>
+                <li class="skills__item">CSS Grid</li>
+                <li class="skills__item">Flexbox</li>
+                <li class="skills__item">JavaScript</li>
             </ul>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
+        <section id="projects" class="projects-grid">
+            <article class="project-card">Portfolio Website</article>
+            <article class="project-card">Professional Service Website</article>
+            <article class="project-card">Form Validation</article>
+        </section>
 
-            <form id="contactForm">
-                <span id="formError"></span>
-                <span id="formSuccess"></span><br><br>
+        <section id="contact" class="card">
+            <h2 class="card__title">Contact</h2>
 
-                <label>Name</label>
-                <input type="text" id="name" required>
+            <form id="contactForm" class="contact-form">
+                <span id="formError" class="form-message form-message--error"></span>
+                <span id="formSuccess" class="form-message form-message--success"></span>
 
-                <label>Email</label>
-                <input type="email" id="email" required>
+                <input class="input" type="text" id="name" placeholder="Name" required>
+                <input class="input" type="email" id="email" placeholder="Email" required>
+                <textarea class="input" id="message" rows="4" placeholder="Message" required></textarea>
 
-                <label>Message</label>
-                <textarea id="message" rows="4" required></textarea>
-
-                <button type="submit">Send Message</button>
+                <button class="btn btn--secondary" type="submit">Send</button>
             </form>
         </section>
 
+
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 sambasivarao</p>
-        <a href="https://github.com/samba2226" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    <footer class="footer">
+        <p>© 2025 Samba Siva Rao</p>
     </footer>
 
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+    <script src="js/theme-switcher.js"></script>
 </body>
+
 </html>
