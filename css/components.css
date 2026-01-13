@@ -1,38 +1,6 @@
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  background: var(--white);
-  padding: 2rem;
-  border-radius: var(--radius);
-}
-
-.profile__image img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--primary);
-}
-
-.profile__name {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
-}
-
-.profile__role {
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.profile__intro {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
 
 /* Dark Mode Support */
-.dark-mode .profile {
+.dark-mode .header {
   background: #2b2b2b;
 }
 

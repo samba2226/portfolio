@@ -3,8 +3,8 @@
   color: #ffffff;
 }
 
-.dark-mode header,
-.dark-mode footer {
+.dark-mode .header,
+.dark-mode .footer {
   background-color: #1e1e1e;
 }
 

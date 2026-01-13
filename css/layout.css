@@ -80,19 +80,13 @@
     content: '';
     display: block;
     height: 2px;
-    width: 0;
     background: #00bfff;
     transition: width 0.3s;
     position: absolute;
     bottom: -5px;
     left: 0;
-}
-
-.nav__link:hover::after {
     width: 100%;
-    /* Animate underline on hover */
 }
-
 
 .projects-grid {
     display: grid;
